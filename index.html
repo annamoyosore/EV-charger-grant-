@@ -1,8 +1,11 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EV Charger Grant Program</title><style>
+<title>EV Charger Grant Program</title>
+
+<style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -12,7 +15,12 @@ body {
 
 header {
     text-align: center;
-    padding: 60px 20px;
+    padding: 40px 20px;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 15px;
 }
 
 header h1 {
@@ -38,10 +46,6 @@ header p {
     border-radius: 10px;
 }
 
-h2 {
-    margin-bottom: 10px;
-}
-
 .apply-btn {
     display: inline-block;
     padding: 15px 30px;
@@ -57,17 +61,45 @@ h2 {
     background: #009624;
 }
 
+/* ✅ Bottom logos section */
+.partners {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.partners img {
+    width: 80px;
+    margin: 10px;
+    opacity: 0.85;
+    transition: 0.3s;
+}
+
+.partners img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
 footer {
     text-align: center;
     padding: 20px;
     opacity: 0.7;
 }
-</style></head><body><header>
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="https://raw.githubusercontent.com/annamoyosore/Div-lottery-/main/uk.jpg" class="logo">
     <h1>EV Charger Grant Program</h1>
     <p>Get financial support to install electric vehicle charging stations at your home or business.</p>
     <br>
     <a href="verify.html" class="apply-btn">Apply Now</a>
-</header><div class="container"><div class="card">
+</header>
+
+<div class="container">
+
+<div class="card">
     <h2>About the Grant</h2>
     <p>This program provides funding assistance for individuals and businesses to install EV charging stations, supporting clean energy adoption and reducing carbon emissions.</p>
 </div>
@@ -98,7 +130,25 @@ footer {
     <a href="verify.html" class="apply-btn">Apply for Grant</a>
 </div>
 
-</div><footer>
+<!-- ✅ Partners / Logos -->
+<div class="partners">
+    <h2>Our Partners</h2>
+
+    <!-- Car logo -->
+    <img src="https://raw.githubusercontent.com/annamoyosore/Image-/main/car.png" alt="Car Logo">
+
+    <!-- Solar logo -->
+    <img src="https://raw.githubusercontent.com/annamoyosore/Image-/main/solar.png" alt="Solar Logo">
+
+    <!-- Optional extra -->
+    <img src="https://raw.githubusercontent.com/annamoyosore/Image-/main/govuk.jpg.png" alt="Gov Logo">
+</div>
+
+</div>
+
+<footer>
     <p>© 2026 EV Grant Program | All Rights Reserved</p>
-</footer></body>
+</footer>
+
+</body>
 </html>
