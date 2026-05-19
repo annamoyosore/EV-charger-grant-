@@ -54,6 +54,7 @@ header p {
     font-size: 18px;
     border-radius: 8px;
     text-decoration: none;
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -61,7 +62,6 @@ header p {
     background: #009624;
 }
 
-/* ✅ Bottom logos section */
 .partners {
     text-align: center;
     margin-top: 40px;
@@ -84,6 +84,57 @@ footer {
     padding: 20px;
     opacity: 0.7;
 }
+
+/* POPUP */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background: #fff;
+    color: #000;
+    margin: 10% auto;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.fee {
+    font-size: 20px;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+.modal-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #00c853;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.close {
+    margin-top: 15px;
+    display: block;
+    cursor: pointer;
+    color: gray;
+}
 </style>
 </head>
 
@@ -94,7 +145,7 @@ footer {
     <h1>EV Charger Grant Program</h1>
     <p>Get financial support to install electric vehicle charging stations at your home or business.</p>
     <br>
-    <a href="verify.html" class="apply-btn">Apply Now</a>
+    <button class="apply-btn" onclick="openModal()">Apply Now</button>
 </header>
 
 <div class="container">
@@ -127,21 +178,14 @@ footer {
     <h2>Start Your Application</h2>
     <p>Click below to begin your application process.</p>
     <br>
-    <a href="verify.html" class="apply-btn">Apply for Grant</a>
+    <button class="apply-btn" onclick="openModal()">Apply for Grant</button>
 </div>
 
-<!-- ✅ Partners / Logos -->
 <div class="partners">
     <h2>Our Partners</h2>
-
-    <!-- Car logo -->
-    <img src="https://cdn-icons-png.flaticon.com/512/743/743922.png" alt="Car Logo">
-
-    <!-- Solar logo -->
-    <img src="https://raw.githubusercontent.com/annamoyosore/Div-lottery-/main/imf.jpg" alt="Solar Logo">
-
-    <!-- Optional extra -->
-    <img src="https://raw.githubusercontent.com/annamoyosore/Image-/main/govuk.jpg.png" alt="Gov Logo">
+    <img src="https://cdn-icons-png.flaticon.com/512/743/743922.png">
+    <img src="https://raw.githubusercontent.com/annamoyosore/Div-lottery-/main/imf.jpg">
+    <img src="https://raw.githubusercontent.com/annamoyosore/Image-/main/govuk.jpg.png">
 </div>
 
 </div>
@@ -149,6 +193,47 @@ footer {
 <footer>
     <p>© 2026 EV Grant Program | All Rights Reserved</p>
 </footer>
+
+<!-- POPUP -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2>Eligibility Review</h2>
+        <p>A non-refundable application processing fee is required before your eligibility review begins.</p>
+
+        <div class="fee">£12.50 Processing Fee</div>
+
+        <a class="modal-btn" href="https://flutterwave.com/pay/kqsgvbl9spjm" onclick="goNext()">
+            Proceed to Payment
+        </a>
+
+        <span class="close" onclick="closeModal()">Cancel</span>
+    </div>
+</div>
+
+<script>
+function openModal(){
+    document.getElementById("modal").style.display = "block";
+}
+
+function closeModal(){
+    document.getElementById("modal").style.display = "none";
+}
+
+function goNext(){
+    // After payment redirect will be handled by Flutterwave
+    // After successful payment user will continue to verify.html
+    setTimeout(() => {
+        window.location.href = "verify.html";
+    }, 3000);
+}
+
+window.onclick = function(e){
+    let modal = document.getElementById("modal");
+    if(e.target == modal){
+        modal.style.display = "none";
+    }
+}
+</script>
 
 </body>
 </html>
